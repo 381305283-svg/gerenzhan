@@ -1,0 +1,243 @@
+.contact {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(90px, 9vw, 140px) 0 40px;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+
+.contact__glow {
+  position: absolute;
+  left: 50%;
+  bottom: -40%;
+  width: min(1500px, 130vw);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 61, 166, 0.16), rgba(85, 21, 66, 0.12) 38%, transparent 68%);
+  pointer-events: none;
+}
+
+.contact__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 5vw, 80px);
+  flex: 1;
+}
+
+/* 标题的呼吸交给 .contact__inner 的 gap，这里不再叠加外边距 */
+.contact .section-head {
+  margin-bottom: 0;
+}
+
+.contact__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 110px);
+  align-items: center;
+  flex: 1;
+}
+
+.contact__claim h3 {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(34px, 3.9vw, 74px);
+  font-weight: 500;
+  line-height: 1.24;
+  letter-spacing: -0.005em;
+}
+
+/* 逐行遮罩：整行从下面推上来 */
+.ln {
+  display: block;
+  overflow: hidden;
+  padding: 0.02em 0.06em 0.16em;
+  margin: -0.02em -0.06em -0.16em;
+}
+
+.ln__i {
+  display: block;
+}
+
+.contact__claim h3 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.contact__claim p {
+  margin-top: 30px;
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-dim);
+}
+
+.contact__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: clamp(28px, 2.4vw, 44px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(28, 13, 25, 0.82), rgba(11, 6, 11, 0.88));
+  box-shadow: 0 40px 80px -60px rgba(255, 61, 166, 0.5);
+}
+
+.contact__mail {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 20px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact__mail strong {
+  grid-column: 1 / 2;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 34px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: color 0.4s var(--ease);
+}
+
+.contact__mail i {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  transition: background 0.45s var(--ease), border-color 0.45s var(--ease),
+    transform 0.45s var(--ease);
+}
+
+.contact__mail i svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.contact__mail:hover strong {
+  color: var(--accent);
+}
+
+.contact__mail:hover i {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #180410;
+  transform: rotate(45deg);
+}
+
+.contact__rows {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+}
+
+.contact__rows > a,
+.contact__rows > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__rows strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.contact__rows a:hover strong {
+  color: var(--accent);
+}
+
+.contact__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-dim);
+}
+
+.contact__status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.contact__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.contact__footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact__mono {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.contact__footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.contact__footer-meta a {
+  color: var(--text-dim);
+  transition: color 0.35s var(--ease);
+}
+
+.contact__footer-meta a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1180px) {
+  .contact__main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact__rows {
+    grid-template-columns: 1fr;
+  }
+  .contact__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact__footer-meta {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}

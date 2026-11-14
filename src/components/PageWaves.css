@@ -1,0 +1,33 @@
+/**
+ * 头图（hero）下方的背景层：固定铺满视口，随页面滚动在头图之后淡入，
+ * 作为 01–04 各版块背后的动效背景。
+ */
+.page-waves {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--waves-reveal, 0);
+  transition: opacity 0.25s linear;
+}
+
+/* 让波纹融进品牌的暗底，同时保证正文可读 */
+.page-waves__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 5, 10, 0.72) 0%,
+      rgba(10, 5, 10, 0.3) 22%,
+      rgba(10, 5, 10, 0.16) 54%,
+      rgba(10, 5, 10, 0.46) 100%
+    ),
+    radial-gradient(1200px 760px at 16% 22%, rgba(42, 11, 36, 0.42), transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-waves {
+    transition: none;
+  }
+}
