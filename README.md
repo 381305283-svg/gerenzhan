@@ -11,6 +11,15 @@ npm run build      # 产出 dist/
 npm run preview    # 预览打包结果
 ```
 
+## 在线地址
+
+- 线上站点：<https://381305283-svg.github.io/gerenzhan/>
+- 代码仓库：<https://github.com/381305283-svg/gerenzhan>
+
+推送到 `main` 后，GitHub Actions（`.github/workflows/deploy.yml`）会自动构建并发布到 GitHub Pages。
+
+构建产物的基准路径固定为 `/gerenzhan/`（见 `vite.config.js`）；如果仓库改名，需要同步修改这里。站内图片、视频统一通过 `src/data/site.js` 里的 `asset()` 拼接 `BASE_URL`，因此本地开发和线上子路径都能正常加载。
+
 ## 页面结构
 
 | 区块 | 组件 | 说明 |
