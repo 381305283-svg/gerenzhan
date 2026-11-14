@@ -1,3 +1,9 @@
+/**
+ * Public 目录里的素材在构建后位于 base 路径下，
+ * 用这个函数拼接，开发（/）和 GitHub Pages（/gerenzhan/）都能取到。
+ */
+export const asset = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, "")}`;
+
 export const profile = {
   name: "陈希一",
   latin: "CHEN XIYI",
@@ -95,7 +101,7 @@ export const works = [
     latin: "CATL · ENERGY STORAGE LAUNCH FILM",
     type: "发布会宣传",
     tags: ["储能主题", "产品测试画面"],
-    cover: "/media/works/work-01.jpg",
+    cover: asset("media/works/work-01.jpg"),
   },
   {
     id: "02",
@@ -103,7 +109,7 @@ export const works = [
     latin: "CRRC · LARGE-SCALE FIRE TEST FILM",
     type: "企业宣传片",
     tags: ["极限试验", "安全主题"],
-    cover: "/media/works/work-02.jpg",
+    cover: asset("media/works/work-02.jpg"),
   },
   {
     id: "03",
@@ -111,7 +117,7 @@ export const works = [
     latin: "AI ANIMATION · INTEGRITY CAMPAIGN",
     type: "AI 动画",
     tags: ["AI 生成", "主题宣传"],
-    cover: "/media/works/work-03.jpg",
+    cover: asset("media/works/work-03.jpg"),
   },
   {
     id: "04",
@@ -119,7 +125,7 @@ export const works = [
     latin: "KUIXING ROCK MV · TOP OF THE HONOUR ROLL",
     type: "MV",
     tags: ["泉州文旅", "实景拍摄"],
-    cover: "/media/works/work-04.jpg",
+    cover: asset("media/works/work-04.jpg"),
   },
   {
     id: "05",
@@ -127,7 +133,7 @@ export const works = [
     latin: "MG ANIMATION · REPORT.001",
     type: "MG 动画",
     tags: ["知识科普", "信息动效"],
-    cover: "/media/works/work-05.jpg",
+    cover: asset("media/works/work-05.jpg"),
   },
   {
     id: "06",
@@ -135,7 +141,7 @@ export const works = [
     latin: "LEADING THE TREND · RENEWING SANMING",
     type: "城市宣传片",
     tags: ["城发集团", "夜景航拍"],
-    cover: "/media/works/work-06.jpg",
+    cover: asset("media/works/work-06.jpg"),
   },
 ];
 

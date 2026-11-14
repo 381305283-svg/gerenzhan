@@ -1,5 +1,5 @@
 import SectionHead from "./SectionHead.jsx";
-import { education, experience, profile, stats } from "../data/site.js";
+import { asset, education, experience, profile, stats } from "../data/site.js";
 import "./About.css";
 
 export default function About() {
@@ -27,7 +27,7 @@ export default function About() {
               <div className="plate__media about__portrait-media">
                 <div className="media__inner">
                   <img
-                    src="/media/character-ip-keyvisual.jpg"
+                    src={asset("media/character-ip-keyvisual.jpg")}
                     alt="CE 角色形象主视觉：戴监听耳机的白色小狗在剪辑时间线前"
                   />
                 </div>
@@ -156,7 +156,7 @@ export default function About() {
           <figure className="plate about__ip-plate">
             <div className="plate__media about__ip-media">
               <div className="media__inner">
-                <img src="/media/character-sheet.png" alt="CE 角色三视图设定稿" />
+                <img src={asset("media/character-sheet.png")} alt="CE 角色三视图设定稿" />
               </div>
             </div>
             <figcaption className="plate__caption">

@@ -1,4 +1,4 @@
-import { profile, ticker } from "../data/site.js";
+import { asset, profile, ticker } from "../data/site.js";
 import "./Hero.css";
 
 export default function Hero() {
@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="hero" id="top">
       <video
         className="hero__video"
-        src="/media/hero-loop.mp4"
-        poster="/media/hero-poster.jpg"
+        src={asset("media/hero-loop.mp4")}
+        poster={asset("media/hero-poster.jpg")}
         autoPlay
         muted
         loop
